@@ -43,8 +43,20 @@ bool lista<T>::lista_vacia(){ //Indica si la lista enlazada esta vacia o no
 }
 
 template <class T>
-void lista<T>::insertar(T dato, int pos){
-	
+void lista<T>::insertar(T dato, int pos){ // Inserta un dato en una posición especifica de la lista entrelazada contando las posiciones desde el 0
+	nodo<T> *newNode = new nodo<T>;
+	newNode->Dato = dato;
+	if(pos > this->size || pos < 0){
+		return;
+	}else{
+		nodo<T> *searchedNode = this->firstNode;
+        for(int i = 1; i < pos; i++){
+            searchedNode = searchedNode->sig;
+        }
+        newNode->sig = searchedNode->sig; // Setea como siguiente del nuevo nodo el nodo ubicado en el siguiente a la posición buscada 
+        searchedNode->sig = newNode; //le indica al nodo que estaba antes de la posición buscada que el siguiente es el nuevo nodo,
+	}
+	size++;
 }
 
 template <class T>

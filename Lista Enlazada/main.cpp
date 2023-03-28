@@ -14,10 +14,11 @@ int main(int argc, char** argv) {
 	lista<char> c;
 	lista<Estud> d;
 	
-	a.insertar_inicio(1);
 	a.insertar_inicio(3);
-	a.insertar_inicio(6);
-	a.insertar_final(29);
+	a.insertar_inicio(2);
+	a.insertar_inicio(1);
+	a.insertar_final(100);
+	a.insertar(555,1);
 	a.imprimir_datos();
 	
 	cout << "Tamaño: " << a.getSize();
